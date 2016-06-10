@@ -1,7 +1,7 @@
 var postcss = require('postcss');
 
 module.exports = postcss.plugin('postcss-short-spacing', function (opts) {
-	var spacer = opts.spacer || '*';
+	var spacer = opts && opts.spacer ? opts.spacer : '*';
 	var prefix = opts && opts.prefix ? '-' + opts.prefix + '-' : '';
 
 	return function (css) {
